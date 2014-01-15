@@ -1,0 +1,223 @@
+{
+    "project": {
+        "name": "argument-parser",
+        "version": "0.0.0"
+    },
+    "files": {
+        "src/__argument-parser/format.js": {
+            "name": "src/__argument-parser/format.js",
+            "modules": {},
+            "classes": {},
+            "fors": {},
+            "namespaces": {}
+        },
+        "src/__argument-parser/types.js": {
+            "name": "src/__argument-parser/types.js",
+            "modules": {},
+            "classes": {},
+            "fors": {},
+            "namespaces": {}
+        },
+        "src/index.js": {
+            "name": "src/index.js",
+            "modules": {
+                "argument-parser": 1
+            },
+            "classes": {
+                "parser": 1
+            },
+            "fors": {},
+            "namespaces": {}
+        }
+    },
+    "modules": {
+        "argument-parser": {
+            "name": "argument-parser",
+            "submodules": {},
+            "classes": {
+                "parser": 1
+            },
+            "fors": {},
+            "namespaces": {},
+            "tag": "module",
+            "file": "src/index.js",
+            "line": 22,
+            "description": "AMD and CJS module."
+        }
+    },
+    "classes": {
+        "parser": {
+            "name": "parser",
+            "shortname": "parser",
+            "classitems": [],
+            "plugins": [],
+            "extensions": [],
+            "plugin_for": [],
+            "extension_for": [],
+            "module": "argument-parser",
+            "namespace": "",
+            "file": "src/index.js",
+            "line": 22,
+            "is_constructor": 1
+        }
+    },
+    "classitems": [
+        {
+            "file": "src/__argument-parser/format.js",
+            "line": 26,
+            "description": "All this method does is to convert arguments\ninto a well behaved data hash object.",
+            "itemtype": "method",
+            "name": "formatObject",
+            "access": "private",
+            "tagname": "",
+            "params": [
+                {
+                    "name": "types",
+                    "description": ""
+                },
+                {
+                    "name": "length",
+                    "description": ""
+                }
+            ],
+            "class": "parser"
+        },
+        {
+            "file": "src/__argument-parser/format.js",
+            "line": 57,
+            "itemtype": "method",
+            "name": "format",
+            "params": [
+                {
+                    "name": "types",
+                    "description": "\n    Array of argument types.",
+                    "type": "Array",
+                    "optional": true
+                },
+                {
+                    "name": "length",
+                    "description": "\n    Optionally define the arguments length.",
+                    "type": "Number",
+                    "optional": true
+                },
+                {
+                    "name": "interface",
+                    "description": "\n    An array of parameter names that should\n    correspond to the arguments.",
+                    "type": "Array"
+                }
+            ],
+            "class": "parser"
+        },
+        {
+            "file": "src/__argument-parser/format.js",
+            "line": 88,
+            "itemtype": "method",
+            "name": "acceptsFormat",
+            "params": [
+                {
+                    "name": "types",
+                    "description": "",
+                    "type": "Array"
+                },
+                {
+                    "name": "length",
+                    "description": "",
+                    "optional": true
+                }
+            ],
+            "class": "parser"
+        },
+        {
+            "file": "src/__argument-parser/format.js",
+            "line": 108,
+            "itemtype": "method",
+            "name": "acceptsTypes",
+            "params": [
+                {
+                    "name": "types",
+                    "description": "",
+                    "type": "Array"
+                }
+            ],
+            "class": "parser"
+        },
+        {
+            "file": "src/__argument-parser/format.js",
+            "line": 122,
+            "itemtype": "method",
+            "name": "acceptsLength",
+            "params": [
+                {
+                    "name": "length",
+                    "description": "",
+                    "type": "Number"
+                }
+            ],
+            "class": "parser"
+        },
+        {
+            "file": "src/__argument-parser/format.js",
+            "line": 141,
+            "description": "Some nice looking aliases",
+            "class": "parser"
+        },
+        {
+            "file": "src/__argument-parser/types.js",
+            "line": 10,
+            "description": "Hash containing lodash's `is{something}` methods,\nkeyed by `sometinhg`",
+            "class": "parser"
+        },
+        {
+            "file": "src/index.js",
+            "line": 30,
+            "description": "This is where format objects are stored.",
+            "itemtype": "property",
+            "name": "_formats",
+            "access": "private",
+            "tagname": "",
+            "class": "parser",
+            "module": "argument-parser"
+        },
+        {
+            "file": "src/index.js",
+            "line": 38,
+            "description": "this is where the param names are stored",
+            "itemtype": "property",
+            "name": "_interfaces",
+            "access": "private",
+            "tagname": "",
+            "class": "parser",
+            "module": "argument-parser"
+        },
+        {
+            "file": "src/index.js",
+            "line": 45,
+            "description": "The name of the interface.\nUseful when throwing errors.",
+            "itemtype": "property",
+            "name": "name",
+            "class": "parser",
+            "module": "argument-parser"
+        },
+        {
+            "file": "src/index.js",
+            "line": 58,
+            "description": "Proto",
+            "class": "parser",
+            "module": "argument-parser"
+        }
+    ],
+    "warnings": [
+        {
+            "message": "Missing item type\nSome nice looking aliases",
+            "line": " src/__argument-parser/format.js:141"
+        },
+        {
+            "message": "Missing item type\nHash containing lodash's `is{something}` methods,\nkeyed by `sometinhg`",
+            "line": " src/__argument-parser/types.js:10"
+        },
+        {
+            "message": "Missing item type\nProto",
+            "line": " src/index.js:58"
+        }
+    ]
+}
