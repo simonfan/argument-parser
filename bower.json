@@ -1,0 +1,17 @@
+{
+  "name": "argument-parser",
+  "main": "built/argument-parser.js",
+  "version": "0.0.0",
+  "description": "provide intelligent argument objects",
+  "dependencies": {
+    "lodash": "~2.4.1",
+    "subject": "~0.3.3"
+  },
+  "devDependencies": {
+    "requirejs": "*",
+    "requirejs-text": "*",
+    "underscore": "*",
+    "jquery": "*",
+    "qunit": "*"
+  }
+}
