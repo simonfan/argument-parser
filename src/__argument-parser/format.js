@@ -112,7 +112,7 @@ define(function (require, exports, module) {
 	exports.acceptsTypes = function acceptsTypes(types) {
 		return _.every(types, _.bind(function (type, index) {
 
-			var type = type.split('|');
+			type = type.split('|');
 
 			return _.any(type, _.partial(isType, this.arguments[index]));
 
@@ -136,7 +136,7 @@ define(function (require, exports, module) {
 
 			return numberCompare[comparison](this.arguments.length, length);
 		}
-	}
+	};
 
 	/**
 	 * Some nice looking aliases

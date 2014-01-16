@@ -45,6 +45,13 @@
 
 		describe('args.acceptsFormat(types, [length])', function () {
 
+			it('supports no-type-nor-count', function () {
+				var args = this.createArgsObj(['string', {}, []]);
+
+				args.acceptsFormat()
+					.should.be.true;
+			});
+
 			it('supports argument-count comparison', function () {
 				var args = this.createArgsObj(['string', {}, []]);
 
@@ -132,6 +139,23 @@
 				});
 
 			});
+
+			it('format-less interface', function () {
+				var args = this.createArgsObj([['alalala'], 'qwqweqwe', 7891]);
+
+				// define interfaces
+				args.interface(['string', 'number'], ['name', 'age'])
+					.interface(['number', 'array', 'string'], ['age', 'hobbies', 'name'])
+					.interface([], ['a', 'b', 'c']);
+
+				var values = args.evaluate();
+
+				values.should.eql({
+					a: ['alalala'],
+					b: 'qwqweqwe',
+					c: 7891
+				});
+			})
 		});
 
 		describe('args.defaults(values {Object})', function () {
