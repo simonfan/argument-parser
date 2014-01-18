@@ -56,7 +56,7 @@ define(function (require, exports, module) {
 
 	/**
 	 * @method format
-	 * @param [types] {Array}
+	 * @param [interface] {Array|Function}
 	 *     Array of argument types.
 	 * @param [length] {Number}
 	 *     Optionally define the arguments length.

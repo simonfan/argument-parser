@@ -8,25 +8,10 @@ define(function (require, exports, module) {
 	var _ = require('lodash'),
 		isType = require('./types');
 
-	exports.evaluate = function evaluate() {
 
+	exports.findInterface = function findInterface() {
 		// [1] retrieve index of the FIRST VALID FORMAT.
-		var iIndex;
-
-		// use 'every' loop so that we can break out from it
-		_.every(this._formats, _.bind(function (format, index) {
-
-			if (this.acceptsFormat(format)) {
-
-				iIndex = index;
-				// break.
-				return false;
-			} else {
-				// keep on..
-				return true;
-			}
-
-		}, this));
+		var iIndex = _.findIndex(this._formats, _.bind(this.acceptsFormat, this));
 
 		// [2] call error method if no interface was found
 		if (!_.isNumber(iIndex)) {
@@ -34,17 +19,25 @@ define(function (require, exports, module) {
 		}
 
 		// [3] retrieve interface that corresponds to the given format.
-		var i = this._interfaces[iIndex];
+		return this._interfaces[iIndex];
+	};
 
-		// [4] build a response object using the interface and the values.
-		var res = _.zipObject(i, this.args);
+	exports.evaluate = function evaluate() {
 
-		// [5] set the default values.
+		// [1] get the interface
+		var interf = this.findInterface();
+
+		// [2] build a response object using the interface and the values.
+		//     if interface is an array, it contains the argument names
+		//     if it is a function, it returns the response object
+		var res = _.isArray(interf) ? _.zipObject(interf, this.args) : interf.apply(this, this.args);
+
+		// [3] set the default values.
 		if (this._defaults) {
 			_.defaults(res, this._defaults);
 		}
 
-		// [6] check for required parameters
+		// [4] check for required parameters
 		if (_.size(this._required) > 0) {
 			_.each(this._required, function (type, key) {
 
@@ -54,7 +47,7 @@ define(function (require, exports, module) {
 			});
 		}
 
-		// [7] finally return the object
+		// [5] finally return the object
 		return res;
 	};
 });

@@ -89,9 +89,9 @@
             "name": "format",
             "params": [
                 {
-                    "name": "types",
+                    "name": "interface",
                     "description": "\n    Array of argument types.",
-                    "type": "Array",
+                    "type": "Array|Function",
                     "optional": true
                 },
                 {

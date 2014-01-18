@@ -146,7 +146,7 @@ define(function (require, exports, module) {
 
 	/**
 	 * @method format
-	 * @param [types] {Array}
+	 * @param [interface] {Array|Function}
 	 *     Array of argument types.
 	 * @param [length] {Number}
 	 *     Optionally define the arguments length.
@@ -202,7 +202,7 @@ define(function (require, exports, module) {
 	exports.acceptsTypes = function acceptsTypes(types) {
 		return _.every(types, _.bind(function (type, index) {
 
-			var type = type.split(&#x27;|&#x27;);
+			type = type.split(&#x27;|&#x27;);
 
 			return _.any(type, _.partial(isType, this.arguments[index]));
 
@@ -226,7 +226,7 @@ define(function (require, exports, module) {
 
 			return numberCompare[comparison](this.arguments.length, length);
 		}
-	}
+	};
 
 	/**
 	 * Some nice looking aliases

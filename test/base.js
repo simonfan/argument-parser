@@ -155,6 +155,18 @@
 					b: 'qwqweqwe',
 					c: 7891
 				});
+			});
+
+			it('supports functions instead of key array', function () {
+				var args = this.createArgsObj([{a: 'apple', b: 'banana'}]);
+
+				// define interfaces
+				args.interface(['object'], function (obj) { return obj; });
+
+				args.evaluate().should.eql({
+					a: 'apple',
+					b: 'banana'
+				});
 			})
 		});
 

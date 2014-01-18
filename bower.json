@@ -1,7 +1,7 @@
 {
   "name": "argument-parser",
   "main": "built/argument-parser.js",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "provide intelligent argument objects",
   "dependencies": {
     "lodash": "~2.4.1",
